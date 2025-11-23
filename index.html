@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fighting Game MVP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Container for the game to center it and manage relative positioning for UI -->
+    <div id="game-container">
+        <!-- User Interface (Health Bars, Timer) -->
+        <div id="ui-layer">
+            <!-- Player 1 Health -->
+            <div class="health-bar-container">
+                <div class="health-bar-bg"></div>
+                <div id="player-health" class="health-bar-fill"></div>
+            </div>
+            
+            <!-- Timer -->
+            <div id="timer">60</div>
+            
+            <!-- Player 2 Health -->
+            <div class="health-bar-container">
+                <div class="health-bar-bg"></div>
+                <div id="enemy-health" class="health-bar-fill"></div>
+            </div>
+        </div>
+        
+        <!-- Game Over Message -->
+        <div id="display-text"></div>
+
+        <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/projectile.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

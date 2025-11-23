@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#game-container {
+    position: relative;
+    display: inline-block;
+}
+
+#gameCanvas {
+    background-color: #87CEEB; /* Sky blue default */
+    display: block;
+    /* We will set width/height in JS to match 1024x576 (16:9) or similar */
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    z-index: 10; /* Above canvas */
+}
+
+.health-bar-container {
+    position: relative;
+    height: 30px;
+    width: 40%; /* Flexible width */
+    border: 2px solid white;
+}
+
+.health-bar-bg {
+    background-color: red;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.health-bar-fill {
+    background-color: #818cf8; /* Player color-ish */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0; /* For player 1 usually right? No wait. */
+}
+
+/* Player 1 (Left) Health Bar Fill */
+#player-health {
+    background-color: #ffff00; /* Yellow health like SF2 */
+    left: 0;
+    right: auto;
+}
+
+/* Enemy (Right) Health Bar Fill */
+#enemy-health {
+    background-color: #ffff00;
+    right: 0;
+    left: auto;
+}
+
+#timer {
+    background-color: #111;
+    color: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+#display-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+    display: none; /* Hidden by default */
+    z-index: 20;
+    text-shadow: 2px 2px 4px black;
+}
